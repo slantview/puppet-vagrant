@@ -15,7 +15,7 @@ Puppet::Type.newtype :vagrant_box do
     isnamevar
 
     validate do |value|
-      unless value =~ /\A\w+\/\w+\z/
+      unless value =~ /.*\/.*/
         raise Puppet::Error, "Malformed name: vagrant_box[#{value}]"
       end
     end
